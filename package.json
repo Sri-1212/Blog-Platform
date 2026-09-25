@@ -1,0 +1,16 @@
+{
+  "name": "blog-platform-monorepo",
+  "version": "1.0.0",
+  "description": "Full-Stack Blog Platform with Comments (Node.js, Express, TypeScript, React 19, Vite, Zustand, MongoDB)",
+  "private": true,
+  "scripts": {
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "build": "npm --prefix server run build && npm --prefix client run build",
+    "seed": "npm --prefix server run seed",
+    "start": "npm --prefix server run start"
+  },
+  "keywords": ["blog", "react19", "typescript", "express", "mongodb", "jwt", "zustand"],
+  "author": "",
+  "license": "ISC"
+}

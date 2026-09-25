@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const commentController_1 = require("../controllers/commentController");
+const validateMiddleware_1 = require("../middleware/validateMiddleware");
+const commentValidator_1 = require("../validators/commentValidator");
+const authMiddleware_1 = require("../middleware/authMiddleware");
+const router = (0, express_1.Router)();
+router.put('/:id', authMiddleware_1.authenticate, (0, validateMiddleware_1.validateBody)(commentValidator_1.updateCommentSchema), commentController_1.updateComment);
+router.delete('/:id', authMiddleware_1.authenticate, commentController_1.deleteComment);
+exports.default = router;

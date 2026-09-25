@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-nav {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Markdown prose styling */
+.markdown-body h1 {
+  @apply text-3xl font-extrabold text-white mt-8 mb-4 border-b border-slate-800 pb-2;
+}
+.markdown-body h2 {
+  @apply text-2xl font-bold text-slate-100 mt-6 mb-3 border-b border-slate-800/60 pb-1;
+}
+.markdown-body h3 {
+  @apply text-xl font-semibold text-slate-200 mt-5 mb-2;
+}
+.markdown-body p {
+  @apply text-slate-300 leading-relaxed mb-4 text-base;
+}
+.markdown-body ul {
+  @apply list-disc list-inside space-y-1 mb-4 text-slate-300 pl-2;
+}
+.markdown-body ol {
+  @apply list-decimal list-inside space-y-1 mb-4 text-slate-300 pl-2;
+}
+.markdown-body li {
+  @apply text-slate-300 mb-1;
+}
+.markdown-body blockquote {
+  @apply border-l-4 border-indigo-500 bg-indigo-950/30 pl-4 py-2 my-4 rounded-r text-slate-300 italic;
+}
+.markdown-body code {
+  @apply bg-slate-900 text-indigo-300 px-1.5 py-0.5 rounded text-sm border border-slate-800 font-mono;
+}
+.markdown-body pre {
+  @apply bg-slate-900 border border-slate-800 p-4 rounded-xl overflow-x-auto my-4 text-sm text-slate-200 shadow-inner;
+}
+.markdown-body pre code {
+  @apply bg-transparent text-slate-200 border-none p-0;
+}
+.markdown-body hr {
+  @apply border-slate-800 my-6;
+}
+.markdown-body a {
+  @apply text-indigo-400 hover:text-indigo-300 underline underline-offset-2 transition-colors;
+}
+.markdown-body img {
+  @apply rounded-xl max-w-full my-4 border border-slate-800 shadow-lg;
+}

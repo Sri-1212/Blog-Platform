@@ -1,0 +1,58 @@
+﻿src/controllers/commentController.ts(20,41): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+src/controllers/commentController.ts(35,16): error TS2339: Property 'replies' does not exist on type 'IComment & Required<{ _id: ObjectId; }> & { __v: number; }'.
+src/controllers/commentController.ts(36,31): error TS2339: Property 'id' does not exist on type 'IComment & Required<{ _id: ObjectId; }> & { __v: number; }'.
+src/controllers/commentController.ts(71,41): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+src/controllers/postController.ts(157,49): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string | undefined'.
+  Type 'string[]' is not assignable to type 'string'.
+src/middleware/validateMiddleware.ts(12,39): error TS2339: Property 'errors' does not exist on type 'ZodError<unknown>'.
+src/middleware/validateMiddleware.ts(12,51): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/models/Comment.ts(45,9): error TS2339: Property 'id' does not exist on type 'IComment & Required<{ _id: ObjectId; }> & { __v: number; }'.
+src/models/Comment.ts(46,12): error TS2790: The operand of a 'delete' operator must be optional.
+src/models/Comment.ts(47,12): error TS2790: The operand of a 'delete' operator must be optional.
+src/models/Post.ts(72,9): error TS2339: Property 'id' does not exist on type 'IPost & Required<{ _id: ObjectId; }> & { __v: number; }'.
+src/models/Post.ts(73,12): error TS2790: The operand of a 'delete' operator must be optional.
+src/models/Post.ts(74,12): error TS2790: The operand of a 'delete' operator must be optional.
+src/models/User.ts(3,18): error TS2430: Interface 'IUser' incorrectly extends interface 'Document<ObjectId, any, any, Record<string, any>, {}>'.
+  Types of property '_id' are incompatible.
+    Type 'import("mongoose").Schema.Types.ObjectId' is not assignable to type 'import("mongoose").Types.ObjectId'.
+      Type 'import("mongoose").Schema.Types.ObjectId' is missing the following properties from type 'import("C:/Users/nayak/OneDrive/Desktop/blog website/server/node_modules/mongoose/node_modules/mongodb/mongodb").ObjectId': _bsontype, id, toHexString, toJSON, and 5 more.
+src/models/User.ts(46,9): error TS2339: Property 'id' does not exist on type 'IUser & Required<{ _id: ObjectId; }> & { __v: number; }'.
+src/models/User.ts(47,12): error TS2790: The operand of a 'delete' operator must be optional.
+src/models/User.ts(48,12): error TS2790: The operand of a 'delete' operator must be optional.
+src/models/User.ts(49,12): error TS2790: The operand of a 'delete' operator must be optional.
+src/seed.ts(97,7): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Type 'ObjectId' is not assignable to type 'ObjectIdQueryTypeCasting | undefined'.
+src/seed.ts(145,7): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Type 'ObjectId' is not assignable to type 'ObjectIdQueryTypeCasting | undefined'.
+src/seed.ts(182,7): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Type 'ObjectId' is not assignable to type 'ObjectIdQueryTypeCasting | undefined'.
+src/seed.ts(197,7): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Type 'ObjectId' is not assignable to type 'ObjectIdQueryTypeCasting | undefined'.
+src/seed.ts(206,19): error TS2339: Property '_id' does not exist on type 'never'.
+src/seed.ts(207,7): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Type 'ObjectId' is not assignable to type 'ObjectIdQueryTypeCasting | undefined'.
+src/seed.ts(212,19): error TS2339: Property '_id' does not exist on type 'never'.
+src/seed.ts(213,7): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Type 'ObjectId' is not assignable to type 'ObjectIdQueryTypeCasting | undefined'.
+src/seed.ts(215,31): error TS2339: Property '_id' does not exist on type 'never'.
+src/seed.ts(219,19): error TS2339: Property '_id' does not exist on type 'never'.
+src/seed.ts(220,7): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Type 'ObjectId' is not assignable to type 'ObjectIdQueryTypeCasting | undefined'.
+src/seed.ts(225,19): error TS2339: Property '_id' does not exist on type 'never'.
+src/seed.ts(226,7): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Type 'ObjectId' is not assignable to type 'ObjectIdQueryTypeCasting | undefined'.
+src/seed.ts(231,19): error TS2339: Property '_id' does not exist on type 'never'.
+src/seed.ts(232,7): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Type 'ObjectId' is not assignable to type 'ObjectIdQueryTypeCasting | undefined'.
+src/seed.ts(234,31): error TS2339: Property '_id' does not exist on type 'never'.
