@@ -5,11 +5,20 @@
 @layer base {
   body {
     font-family: 'Inter', system-ui, sans-serif;
+    transition: background-color 180ms ease, color 180ms ease;
   }
 
   code, pre {
     font-family: 'JetBrains Mono', monospace;
   }
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+html.light {
+  color-scheme: light;
 }
 
 /* Custom Scrollbar */
@@ -41,6 +50,98 @@
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+html.light body {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+html.light :is([class~="bg-slate-950"], [class~="bg-slate-950/80"]) {
+  background-color: #f8fafc;
+}
+
+html.light :is([class~="bg-slate-900"], [class~="bg-slate-900/40"], [class~="bg-slate-900/60"], [class~="bg-slate-900/80"], [class~="bg-slate-900/90"], [class~="bg-slate-900/95"]) {
+  background-color: #ffffff;
+}
+
+html.light :is([class~="bg-slate-800"], [class~="bg-slate-800/50"], [class~="bg-slate-800/60"], [class~="bg-slate-800/70"], [class~="bg-slate-800/80"]) {
+  background-color: #f1f5f9;
+}
+
+html.light [class~="bg-slate-700"] {
+  background-color: #e2e8f0;
+}
+
+html.light :is([class~="text-slate-100"], [class~="text-slate-200"]) {
+  color: #0f172a;
+}
+
+html.light [class~="text-slate-300"] {
+  color: #334155;
+}
+
+html.light [class~="text-slate-400"] {
+  color: #475569;
+}
+
+html.light :is([class~="text-slate-500"], [class~="text-slate-600"]) {
+  color: #64748b;
+}
+
+html.light :is([class~="border-slate-800"], [class~="border-slate-800/40"], [class~="border-slate-800/50"], [class~="border-slate-800/60"], [class~="border-slate-800/80"], [class~="border-slate-700"], [class~="border-slate-700/50"], [class~="border-slate-700/60"], [class~="border-slate-700/80"], [class~="border-slate-600"]) {
+  border-color: #e2e8f0;
+}
+
+html.light [class*="hover:bg-slate-"]:hover {
+  background-color: #e2e8f0;
+}
+
+html.light [class*="hover:text-white"]:hover {
+  color: #0f172a;
+}
+
+html.light [class*="hover:text-slate-"]:hover {
+  color: #334155;
+}
+
+html.light [class*="from-white"] {
+  --tw-gradient-from: #4338ca var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(67 56 202 / 0) var(--tw-gradient-to-position);
+}
+
+html.light [class*="via-slate-200"] {
+  --tw-gradient-stops: var(--tw-gradient-from), #4f46e5 var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
+html.light [class*="to-slate-400"] {
+  --tw-gradient-to: #64748b var(--tw-gradient-to-position);
+}
+
+html.light :is(h1, h2)[class~="text-white"] {
+  color: #0f172a;
+}
+
+html.light .glass-panel {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(148, 163, 184, 0.3);
+}
+
+html.light .glass-nav {
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom-color: rgba(148, 163, 184, 0.3);
+}
+
+html.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
 
 /* Markdown prose styling */
@@ -85,4 +186,42 @@
 }
 .markdown-body img {
   @apply rounded-xl max-w-full my-4 border border-slate-800 shadow-lg;
+}
+
+html.light .markdown-body h1 {
+  @apply text-slate-900 border-slate-200;
+}
+html.light .markdown-body h2 {
+  @apply text-slate-900 border-slate-200;
+}
+html.light .markdown-body h3 {
+  @apply text-slate-800;
+}
+html.light .markdown-body p,
+html.light .markdown-body ul,
+html.light .markdown-body ol,
+html.light .markdown-body li,
+html.light .markdown-body blockquote {
+  @apply text-slate-700;
+}
+html.light .markdown-body blockquote {
+  @apply bg-indigo-50;
+}
+html.light .markdown-body code {
+  @apply bg-slate-100 text-indigo-700 border-slate-200;
+}
+html.light .markdown-body pre {
+  @apply bg-slate-100 border-slate-200 text-slate-800;
+}
+html.light .markdown-body pre code {
+  @apply bg-transparent text-slate-800;
+}
+html.light .markdown-body hr {
+  @apply border-slate-200;
+}
+html.light .markdown-body a {
+  @apply text-indigo-700 hover:text-indigo-600;
+}
+html.light .markdown-body img {
+  @apply border-slate-200;
 }

@@ -1,20 +1,45 @@
-import React, { useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuthStore } from '../store/useAuthStore';
-import { PenSquare, LogOut, User as UserIcon, BookOpen, Sparkles, Menu, X } from 'lucide-react';
+import { PenSquare, LogOut, User as UserIcon, BookOpen, Sparkles, Menu, X, Moon, Sun } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const { user, isAuthenticated, logout } = useAuthStore();
   const navigate = useNavigate();
   const location = useLocation();
+  const [theme, setTheme] = useState<'dark' | 'light'>(() =>
+    localStorage.getItem('theme') === 'light' ? 'light' : 'dark'
+  );
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useLayoutEffect(() => {
+    document.documentElement.classList.toggle('light', theme === 'light');
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   const handleLogout = () => {
     logout();
     setDropdownOpen(false);
     navigate('/login');
   };
+
+  const renderThemeToggle = (compact = false) => (
+    <button
+      type="button"
+      onClick={() => setTheme((currentTheme) => currentTheme === 'dark' ? 'light' : 'dark')}
+      className={`inline-flex items-center justify-center gap-2 rounded-xl border border-slate-700/60 text-slate-300 transition-colors hover:bg-slate-800/60 hover:text-white ${
+        compact ? 'p-2' : 'px-3 py-2 text-sm'
+      }`}
+      aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+      aria-pressed={theme === 'light'}
+      title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+    >
+      {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+      {!compact && <span>{theme === 'dark' ? 'Light mode' : 'Dark mode'}</span>}
+    </button>
+  );
 
   return (
     <nav className="sticky top-0 z-50 glass-nav transition-all border-b border-slate-800/80">
@@ -37,6 +62,7 @@ export const Navbar: React.FC = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
+            {renderThemeToggle()}
             <Link
               to="/"
               className={`flex items-center gap-2 text-sm font-medium transition-colors ${
@@ -123,6 +149,7 @@ export const Navbar: React.FC = () => {
 
           {/* Mobile Menu Toggle */}
           <div className="md:hidden flex items-center gap-2">
+            {renderThemeToggle(true)}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800"

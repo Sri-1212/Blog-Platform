@@ -15,6 +15,7 @@ Built as a clean monorepo architecture featuring **Node.js, Express, TypeScript,
 - **Draft & Published Post Visibility**: Authors can draft articles privately, preview them, and toggle status on demand.
 - **Instant Demo Readiness**: Pre-configured seed script with 3 demo users, sample posts, tags, and threaded discussion comments.
 - **One-Click Demo Login**: Login screen with quick-fill demo buttons for instant testing.
+- **Light & Dark Themes**: Switch themes from the navigation bar; your choice is saved in the browser.
 
 ---
 
